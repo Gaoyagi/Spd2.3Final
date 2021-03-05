@@ -82,7 +82,7 @@ def isSpaceFree(board, move):
 def getPlayerMove(board):
     # Let the player type in their move.
     choice = ' ' # [X] TODO: W0621: Redefining name 'move' from outer scope. Hint: Fix it according to https://stackoverflow.com/a/25000042/81306
-    while choice not in '1 2 3 4 5 6 7 8 9'.split() or not isSpaceFree(board, int(move)):
+    while choice not in '1 2 3 4 5 6 7 8 9'.split() or not isSpaceFree(board, int(choice)):
         print('What is your next move? (1-9)')
         choice = input()
     return int(choice)
@@ -174,8 +174,8 @@ def playRound(board, pletter, cLetter):
 
         else:
             # Computer’s turn.
-            move = getComputerMove(theBoard, computerLetter)
-            makeMove(theBoard, cLetter, move)
+            move = getComputerMove(board, cLetter)
+            makeMove(board, cLetter, move)
             if endRoundChecker(board, cLetter, turn):
                 break
             turn = 'player'
