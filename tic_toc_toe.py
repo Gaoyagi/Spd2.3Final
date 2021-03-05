@@ -52,6 +52,7 @@ def playAgain():
     return input().lower().startswith('y')
 
 def makeMove(board, letter, move):
+    print(move)
     board[move] = letter
 
 def isWinner(bo, le):
